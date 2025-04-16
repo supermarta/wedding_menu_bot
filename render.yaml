@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: wedding_menu_bot             
+    env: python                   
+    branch: master                
+    buildCommand: "pip install -r requirements.txt"  
+    startCommand: "gunicorn app:app"                
+    envVars:                      
+      - key: OPENAI_API_KEY
+        sync: false               
+
